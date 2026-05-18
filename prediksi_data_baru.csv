@@ -5,3 +5,4 @@ stab.glu,weight,waist,hip,Classification
 180.0,180.0,50.0,60.0,Infected (worse)
 180.0,120.0,50.0,50.0,Infected (dangerous)
 180.0,180.0,50.0,40.0,Infected (dangerous)
+70.0,10.0,10.0,10.0,Not infected
