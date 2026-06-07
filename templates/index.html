@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Diabetes</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Klasifikasi Diabetes</h1>
+    <p style="text-align:center; color:#9ca3af; margin-bottom:24px; font-size:14px;">
+        Deteksi risiko diabetes berdasarkan kadar gula darah dan ukuran tubuh
+    </p>
+
+    <form id="predict-form">
+        <div class="input-group">
+            <label for="glucose">Gula Darah (stab.glu)</label>
+            <input type="number" id="glucose" placeholder="cth: 82" min="0" step="0.1" required>
+            <span class="helper">mg/dL — gula darah puasa stabil</span>
+        </div>
+
+        <div class="input-group">
+            <label for="weight">Berat Badan</label>
+            <input type="number" id="weight" placeholder="cth: 121" min="0" step="0.1" required>
+            <span class="helper">lbs — berat badan dalam pound</span>
+        </div>
+
+        <div class="input-group">
+            <label for="waist">Lingkar Pinggang</label>
+            <input type="number" id="waist" placeholder="cth: 29" min="0" step="0.1" required>
+            <span class="helper">inci — ukuran lingkar pinggang</span>
+        </div>
+
+        <div class="input-group">
+            <label for="hip">Lingkar Pinggul</label>
+            <input type="number" id="hip" placeholder="cth: 38" min="0" step="0.1" required>
+            <span class="helper">inci — ukuran lingkar pinggul</span>
+        </div>
+
+        <button type="submit">Klasifikasi</button>
+    </form>
+
+    <div class="result-box">
+        <h2 id="result"></h2>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
