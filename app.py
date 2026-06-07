@@ -73,13 +73,14 @@ def predict():
                 return jsonify({'error': f'Field "{field}" harus lebih dari 0'}), 400
 
         glucose = float(data['glucose'])
-        weight = float(data['weight'])
+        weight_kg = float(data['weight'])
+        weight_lbs = weight_kg * 2.20462
         waist = float(data['waist'])
         hip = float(data['hip'])
 
         new_data = pd.DataFrame({
             'stab.glu': [glucose],
-            'weight': [weight],
+            'weight': [weight_lbs],
             'waist': [waist],
             'hip': [hip]
         })
