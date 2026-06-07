@@ -33,8 +33,8 @@ Berdasarkan kadar HbA1c (`glyhb`) dalam dataset:
 |---|---|---|
 | `stab.glu` | mg/dL | Gula darah puasa stabil |
 | `weight` | kg (dikonversi ke lbs) | Berat badan |
-| `waist` | inci | Lingkar pinggang |
-| `hip` | inci | Lingkar pinggul |
+| `waist` | cm (dikonversi ke inci) | Lingkar pinggang |
+| `hip` | cm (dikonversi ke inci) | Lingkar pinggul |
 
 ### Model
 
@@ -106,8 +106,8 @@ Menerima JSON dan mengembalikan hasil klasifikasi.
 {
     "glucose": 82,
     "weight": 55,
-    "waist": 29,
-    "hip": 38
+    "waist": 74,
+    "hip": 97
 }
 ```
 
@@ -133,7 +133,8 @@ Menerima JSON dan mengembalikan hasil klasifikasi.
 ```
 
 ### Catatan
-- Berat badan (`weight`) diterima dalam **kg**, akan dikonversi otomatis ke **lbs** sebelum prediksi
+- Berat badan (`weight`) diterima dalam **kg**, dikonversi ke **lbs** sebelum prediksi
+- Lingkar pinggang (`waist`) dan pinggul (`hip`) diterima dalam **cm**, dikonversi ke **inci** sebelum prediksi
 - Semua field wajib diisi, harus angka positif
 - Confidence adalah probabilitas tertinggi dari `predict_proba`
 

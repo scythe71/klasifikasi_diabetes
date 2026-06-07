@@ -75,14 +75,16 @@ def predict():
         glucose = float(data['glucose'])
         weight_kg = float(data['weight'])
         weight_lbs = weight_kg * 2.20462
-        waist = float(data['waist'])
-        hip = float(data['hip'])
+        waist_cm = float(data['waist'])
+        waist_in = waist_cm / 2.54
+        hip_cm = float(data['hip'])
+        hip_in = hip_cm / 2.54
 
         new_data = pd.DataFrame({
             'stab.glu': [glucose],
             'weight': [weight_lbs],
-            'waist': [waist],
-            'hip': [hip]
+            'waist': [waist_in],
+            'hip': [hip_in]
         })
 
         new_scaled = scaler.transform(new_data)
